@@ -151,19 +151,37 @@ export default function Home() {
   const [showLinks, setShowLinks] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
   const [showContact, setShowContact] = useState(false);
+
+  // Close all popups
+  const closeAllPopups = () => {
+    setShowAbout(false);
+    setShowLinks(false);
+    setShowProjects(false);
+    setShowContact(false);
+  };
+
+  // Handle clicking a popup button - close others first
+  const handlePopupToggle = (
+    popupSetter: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
+    closeAllPopups();
+    popupSetter((prev) => !prev);
+  };
+
   return (
     <main
-      className={`relative min-h-screen flex flex-col items-center justify-end pb-150 gap-4 overflow-hidden transition-colors duration-600 ${
+      onClick={closeAllPopups}
+      className={`relative min-h-screen flex flex-col items-center justify-center px-4 gap-4 overflow-hidden transition-colors duration-600 ${
         isNight ? "text-white" : "text-slate-900"
       }`}
     >
       {isNight ? <LavaBackground /> : <WaterLineBackground />}
       <div className="pointer-events-none absolute inset-0 -z-10"></div>
-      <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
+      <h1 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-semibold tracking-tight">
         Shawn Odom
       </h1>
       <p
-        className={`transition-colors duration-600 mt-1 text-sm md:text-base tracking-wide opacity-80 ${
+        className={`transition-colors duration-600 text-base md:text-lg font-work-sans font-light tracking-wide opacity-90 text-center max-w-2xl ${
           isNight ? "text-white" : "text-slate-900"
         }`}
       >
@@ -183,13 +201,15 @@ export default function Home() {
       </button>
       <div className="relative z-20 mt-6 flex items-end gap-8">
         <div className="flex flex-col items-center gap-2 relative">
-          <IconButton
-            isNight={isNight}
-            label="About"
-            onClick={() => setShowAbout((v) => !v)}
-          >
-            <AboutIcon />
-          </IconButton>
+          <div onClick={(e) => e.stopPropagation()}>
+            <IconButton
+              isNight={isNight}
+              label="About"
+              onClick={() => handlePopupToggle(setShowAbout)}
+            >
+              <AboutIcon />
+            </IconButton>
+          </div>
 
           {/* About popout */}
           {showAbout && (
@@ -239,17 +259,21 @@ export default function Home() {
             </div>
           )}
 
-          <span className="text-s tracking-wide opacity-80">about</span>
+          <span className="text-sm font-work-sans tracking-wide opacity-80">
+            about
+          </span>
         </div>
 
         <div className="flex flex-col items-center gap-2 relative">
-          <IconButton
-            isNight={isNight}
-            label="Links"
-            onClick={() => setShowLinks((v) => !v)}
-          >
-            <LinksIcon />
-          </IconButton>
+          <div onClick={(e) => e.stopPropagation()}>
+            <IconButton
+              isNight={isNight}
+              label="Links"
+              onClick={() => handlePopupToggle(setShowLinks)}
+            >
+              <LinksIcon />
+            </IconButton>
+          </div>
 
           {/* Links popout */}
           {showLinks && (
@@ -314,17 +338,21 @@ export default function Home() {
             </div>
           )}
 
-          <span className="text-s tracking-wide opacity-80">links</span>
+          <span className="text-sm font-work-sans tracking-wide opacity-80">
+            links
+          </span>
         </div>
 
         <div className="flex flex-col items-center gap-2 relative">
-          <IconButton
-            isNight={isNight}
-            label="Projects"
-            onClick={() => setShowProjects((v) => !v)}
-          >
-            <ProjectsIcon />
-          </IconButton>
+          <div onClick={(e) => e.stopPropagation()}>
+            <IconButton
+              isNight={isNight}
+              label="Projects"
+              onClick={() => handlePopupToggle(setShowProjects)}
+            >
+              <ProjectsIcon />
+            </IconButton>
+          </div>
 
           {/* Projects popout */}
           {showProjects && (
@@ -366,17 +394,21 @@ export default function Home() {
             </div>
           )}
 
-          <span className="text-s tracking-wide opacity-80">projects</span>
+          <span className="text-sm font-work-sans tracking-wide opacity-80">
+            projects
+          </span>
         </div>
 
         <div className="flex flex-col items-center gap-2 relative">
-          <IconButton
-            isNight={isNight}
-            label="Contact"
-            onClick={() => setShowContact((v) => !v)}
-          >
-            <ContactIcon />
-          </IconButton>
+          <div onClick={(e) => e.stopPropagation()}>
+            <IconButton
+              isNight={isNight}
+              label="Contact"
+              onClick={() => handlePopupToggle(setShowContact)}
+            >
+              <ContactIcon />
+            </IconButton>
+          </div>
 
           {/* Contact popout */}
           {showContact && (
@@ -433,7 +465,9 @@ export default function Home() {
             </div>
           )}
 
-          <span className="text-s tracking-wide opacity-80">contact</span>
+          <span className="text-sm font-work-sans tracking-wide opacity-80">
+            contact
+          </span>
         </div>
       </div>
     </main>

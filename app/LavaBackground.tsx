@@ -8,7 +8,7 @@ export default function LavaLineBackground() {
 
       {/* Lava line */}
       <svg
-        className="absolute bottom-0 left-0 w-full h-90"
+        className="absolute bottom-0 left-0 w-full h-85"
         viewBox="0 0 1200 200"
         preserveAspectRatio="none"
         aria-hidden="true"
