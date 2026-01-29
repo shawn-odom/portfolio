@@ -214,7 +214,7 @@ export default function Home() {
           {/* About popout */}
           {showAbout && (
             <div
-              className={`absolute left-1/2 top-[4.75rem] -translate-x-1/2 z-30 transition-all duration-200 w-[calc(100vw-2rem)] max-w-[20rem] md:max-w-[24rem]`}
+              className={`absolute left-1/4 top-[4.75rem] z-30 transition-all duration-200 w-[calc(100vw-2rem)] max-w-[20rem] md:max-w-[24rem]`}
             >
               <div
                 className={`pointer-events-auto rounded-xl p-4 md:p-5 backdrop-blur-md shadow-2xl border ${
