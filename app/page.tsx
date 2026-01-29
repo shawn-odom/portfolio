@@ -214,10 +214,10 @@ export default function Home() {
           {/* About popout */}
           {showAbout && (
             <div
-              className={`absolute left-1/2 top-[4.75rem] -translate-x-1/2 z-30 transition-all duration-200`}
+              className={`absolute left-1/2 bottom-[4.75rem] -translate-x-1/2 z-30 transition-all duration-200 w-[calc(100vw-2rem)] max-w-[24rem] md:max-w-[28rem]`}
             >
               <div
-                className={`pointer-events-auto w-[24rem] md:w-[28rem] rounded-2xl p-6 md:p-7 backdrop-blur-md shadow-2xl border ${
+                className={`pointer-events-auto rounded-2xl p-5 md:p-7 backdrop-blur-md shadow-2xl border ${
                   isNight
                     ? "bg-slate-900/90 text-white border-white/20"
                     : "bg-white/95 text-slate-900 border-black/10"
@@ -244,7 +244,7 @@ export default function Home() {
                   About
                 </h2>
 
-                <p className="text-sm md:text-base leading-relaxed mb-3 opacity-95">
+                <p className="text-xs md:text-base leading-relaxed mb-2 md:mb-3 opacity-95">
                   Hello my name is Shawn and I'm a Computer Science student
                   finishing up his degree at PSU. I am a graduated member of the
                   Computer Action Team, which is a volunteer IT organization on
@@ -252,7 +252,7 @@ export default function Home() {
                   manga!
                 </p>
 
-                <p className="text-sm md:text-base leading-relaxed opacity-95">
+                <p className="text-xs md:text-base leading-relaxed opacity-95">
                   Current Position: Workshop Intern @ Jaguar Land Rover.
                 </p>
               </div>
@@ -278,10 +278,10 @@ export default function Home() {
           {/* Links popout */}
           {showLinks && (
             <div
-              className={`absolute left-1/2 top-[4.75rem] -translate-x-1/2 z-30 transition-all duration-200`}
+              className={`absolute left-1/2 bottom-[4.75rem] -translate-x-1/2 z-30 transition-all duration-200 w-[calc(100vw-2rem)] max-w-[22rem] md:max-w-[26rem]`}
             >
               <div
-                className={`pointer-events-auto w-[22rem] md:w-[26rem] rounded-2xl p-6 md:p-7 backdrop-blur-md shadow-2xl border ${
+                className={`pointer-events-auto rounded-2xl p-5 md:p-7 backdrop-blur-md shadow-2xl border ${
                   isNight
                     ? "bg-slate-900/90 text-white border-white/20"
                     : "bg-white/95 text-slate-900 border-black/10"
@@ -303,16 +303,16 @@ export default function Home() {
                   ✕
                 </button>
 
-                <h2 className="text-base md:text-lg font-semibold tracking-tight mb-4">
+                <h2 className="text-base md:text-lg font-semibold tracking-tight mb-3 md:mb-4">
                   Links
                 </h2>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2 md:gap-3">
                   <a
                     href="https://www.linkedin.com/in/shawn-odom-80a68a32b/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`rounded-lg px-4 py-3 text-sm md:text-base transition ${
+                    className={`rounded-lg px-3 md:px-4 py-2 md:py-3 text-xs md:text-base transition ${
                       isNight
                         ? "bg-white/10 hover:bg-white/20"
                         : "bg-black/5 hover:bg-black/10"
@@ -325,7 +325,7 @@ export default function Home() {
                     href="https://github.com/shawn-odom"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`rounded-lg px-4 py-3 text-sm md:text-base transition ${
+                    className={`rounded-lg px-3 md:px-4 py-2 md:py-3 text-xs md:text-base transition ${
                       isNight
                         ? "bg-white/10 hover:bg-white/20"
                         : "bg-black/5 hover:bg-black/10"
@@ -357,10 +357,10 @@ export default function Home() {
           {/* Projects popout */}
           {showProjects && (
             <div
-              className={`absolute left-1/2 top-[4.75rem] -translate-x-1/2 z-30 transition-all duration-200`}
+              className={`absolute left-1/2 bottom-[4.75rem] -translate-x-1/2 z-30 transition-all duration-200 w-[calc(100vw-2rem)] max-w-[24rem] md:max-w-[28rem]`}
             >
               <div
-                className={`pointer-events-auto w-[24rem] md:w-[28rem] rounded-2xl p-6 md:p-7 backdrop-blur-md shadow-2xl border ${
+                className={`pointer-events-auto rounded-2xl p-5 md:p-7 backdrop-blur-md shadow-2xl border ${
                   isNight
                     ? "bg-slate-900/90 text-white border-white/20"
                     : "bg-white/95 text-slate-900 border-black/10"
@@ -382,11 +382,11 @@ export default function Home() {
                   ✕
                 </button>
 
-                <h2 className="text-base md:text-lg font-semibold tracking-tight mb-4">
+                <h2 className="text-base md:text-lg font-semibold tracking-tight mb-3 md:mb-4">
                   Projects
                 </h2>
 
-                <p className="text-sm md:text-base leading-relaxed opacity-75 italic">
+                <p className="text-xs md:text-base leading-relaxed opacity-75 italic">
                   Coming soon! Besides this portfolio page, I'm currently
                   working on some exciting projects to showcase here.
                 </p>
@@ -412,9 +412,9 @@ export default function Home() {
 
           {/* Contact popout */}
           {showContact && (
-            <div className="absolute left-1/2 top-[4.75rem] -translate-x-1/2 z-30">
+            <div className="absolute left-1/2 bottom-[4.75rem] -translate-x-1/2 z-30 w-[calc(100vw-2rem)] max-w-[22rem] md:max-w-[26rem]">
               <div
-                className={`pointer-events-auto w-[22rem] md:w-[26rem] rounded-2xl p-6 md:p-7 backdrop-blur-md shadow-2xl border ${
+                className={`pointer-events-auto rounded-2xl p-5 md:p-7 backdrop-blur-md shadow-2xl border ${
                   isNight
                     ? "bg-slate-900/90 text-white border-white/20"
                     : "bg-white/95 text-slate-900 border-black/10"
@@ -432,14 +432,14 @@ export default function Home() {
                   ✕
                 </button>
 
-                <h2 className="text-base md:text-lg font-semibold tracking-tight mb-4">
+                <h2 className="text-base md:text-lg font-semibold tracking-tight mb-3 md:mb-4">
                   Contact
                 </h2>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2 md:gap-3">
                   <a
                     href="mailto:shawnodom2004@gmail.com"
-                    className={`rounded-lg px-4 py-3 text-sm md:text-base transition ${
+                    className={`rounded-lg px-3 md:px-4 py-2 md:py-3 text-xs md:text-base transition ${
                       isNight
                         ? "bg-white/10 hover:bg-white/20"
                         : "bg-black/5 hover:bg-black/10"
@@ -452,7 +452,7 @@ export default function Home() {
                     href="https://www.linkedin.com/in/shawn-odom-80a68a32b/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`rounded-lg px-4 py-3 text-sm md:text-base transition ${
+                    className={`rounded-lg px-3 md:px-4 py-2 md:py-3 text-xs md:text-base transition ${
                       isNight
                         ? "bg-white/10 hover:bg-white/20"
                         : "bg-black/5 hover:bg-black/10"
